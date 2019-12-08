@@ -16,7 +16,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
 
-        inputNameBtn.setOnLongClickListener {
+        inputNameBtn.setOnClickListener {
             val intent = Intent(this, EditnameActivity::class.java)
 //            startActivity(intent)  => 단순 화면 이동을 위한 호출
 
