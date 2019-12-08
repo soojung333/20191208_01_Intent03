@@ -1,5 +1,6 @@
 package kr.co.tjoeun.a20191208_01_intent03
 
+import android.app.Activity
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -28,4 +29,32 @@ class MainActivity : AppCompatActivity() {
 
 
     }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+
+//        어떤 요청에 대한 결과를 가져온건지 확인
+        if (requestCode == REQ_CODE_FOR_INPUT_NAME) {
+
+//            확인 버튼을 누른게 맞는지 확인
+            if (resultCode == Activity.RESULT_OK) {
+
+//                결과를 담아둔 intent가 실재할 때에만 실행됨.
+                if(data != null) {
+                    val inputName = data.getStringExtra("name")
+
+                    nameTxt.text = inputName
+
+                }
+            }
+
+        }
+
+    }
+
+
+
+
+
+
 }
